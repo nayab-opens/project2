@@ -1,0 +1,43 @@
+<%- include ../Partials/header.ejs%>
+<%- include ../Partials/main_nav.ejs%>
+
+<main class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="mb-4"><%= title %></h1>
+            <% if(typeof displayName === 'string' && displayName) { %>
+            <a href="/jewellerieslist/add" class="btn btn-primary mb-4" role="button">
+                <i class="fas fa-plus-circle"></i> Add Jewellery
+            </a>
+            <% } %>
+        </div>
+    </div>
+    <div class="row">
+        <% for(let count = 0; count < JewelleriesList.length; count++) { %>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-center"><%= JewelleriesList[count].product %></h5>
+                    <p class="card-text"><strong>Category:</strong> <%= JewelleriesList[count].category %></p>
+                    <p class="card-text"><strong>Price:</strong> $<%= JewelleriesList[count].price %></p>
+                    <p class="card-text"><strong>Color:</strong> <%= JewelleriesList[count].color %></p>
+                    <p class="card-text"><strong>Metal:</strong> <%= JewelleriesList[count].metal %></p>
+                    <p class="card-text"><strong>Size:</strong> <%= JewelleriesList[count].size %></p>
+                </div>
+                <% if(typeof displayName === 'string' && displayName) { %>
+                <div class="card-footer text-center">
+                    <a href="/jewellerieslist/edit/<%= JewelleriesList[count]._id %>" class="btn btn-primary btn-sm me-2">
+                        <i class="fas fa-pencil-alt"></i> Edit
+                    </a>
+                    <a href="/jewellerieslist/delete/<%= JewelleriesList[count]._id %>" class="btn btn-danger btn-sm">
+                        <i class="fas fa-trash-alt"></i> Delete
+                    </a>
+                </div>
+                <% } %>
+            </div>
+        </div>
+        <% } %>
+    </div>
+</main>
+
+<%- include ../Partials/footer.ejs%>
