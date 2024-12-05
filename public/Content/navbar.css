@@ -3,8 +3,9 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    text-align: center;
     background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
 }
 
 img {
@@ -15,27 +16,40 @@ img {
 p {
     font-size: 1.2rem;
     color: #05472a;
+    margin: 10px 0; /* Add spacing between paragraphs */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Button Styling */
+.navbar-brand:hover {
+    color: #005c34;
+    transform: scale(1.1); /* Slight enlargement */
+    transition: color 0.3s ease, transform 0.2s ease; /* Smooth effect */
+}
+
 button.link-button {
     display: inline-block;
-    background-color: #11391b;
+    background: linear-gradient(90deg, #3e6449, #1e5a36); /* Gradient */
+    background-color: #3e6449; /* Fallback color */
     color: white;
     border: none;
-    border-radius: 5px;
     padding: 10px 20px;
+    margin: 10px; /* Adjust spacing */
     text-decoration: none;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-align: center;
+    vertical-align: middle;
 }
 
 button.link-button:hover {
-    background-color: #3e6449;
+    background: linear-gradient(90deg, #5fa26d, #3e6449); /* Brighter gradient */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
     transform: scale(1.05);
 }
 
 button.link-button:active {
     transform: scale(0.95);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
