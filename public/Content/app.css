@@ -5,166 +5,79 @@
     box-sizing: border-box;
 }
 
-
-body {
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
     font-family: 'Courier New', Courier, monospace;
-    background: linear-gradient(to right, #bfcfbb, #05472a, #000000); /* linear gradient */
+    background: linear-gradient(to bottom, #bfcfbb, #05472a, #000000); /* Top-to-bottom gradient */
     color: black;
 }
 
-
-/* Home Page */
-#home-page {
+/* Content Styling for Home Page */
+#home-page-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    min-height: calc(100vh - 60px);
+    padding: 20px;
 }
 
-
-#home-page main {
-    margin-top: 50px;
-}
-
-
-#home-page h1 {
-    font-size: 36px;
-}
-
-
-#home-page p {
-    font-size: 18px;
-}
-
-
-/* Container for text and image */
-.intro-section {
-    display: flex; /* Use flexbox to align elements side by side */
-    justify-content: space-between; /* Space between text and image */
-    align-items: center; /* Vertically align content */
-    padding: 50px; /* padding around the section */
-}
-
-
-/* Text content styling */
-.text-content {
-    flex: 1; /* Allow text content to take up more space */
-    margin-right: 20px; /* Add space between text and image */
-}
-
-
-.text-content h1 {
-    font-size: 32px;
+#home-page-content h1 {
+    font-size: 3.5rem;
+    color: #fffefe;
     margin-bottom: 20px;
 }
 
-
-.text-content p {
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-
-/* Image content styling */
-.image-content {
-    flex: 1; /* Allow image content to take up equal space */
-    display: flex;
-    justify-content: center;
-}
-
-
-.profile-image {
-    max-width: 100%; /* Scale image to fit within its container */
-    height: auto;
-    box-shadow: 10px 7px 10px rgba(0, 0, 0, 0.1);
-}
-
-
-/* Header and Navigation Styling */
-header {
-    background-color: rgb(255, 255, 255);
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    box-shadow: none;
-}
-
-
-/* Flex container to align the image and navigation */
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-
-/* Styling for the logo image */
-.logo {
-    width: 50px;
-    height: 50px;
-    margin-right: 20px; /* Space between image and navigation */
-}
-
-
-/* Navigation list styling */
-.nav-list {
-    list-style-type: none; /* Remove default bullet points */
-    margin: 0;
-    padding: 0;
-    display: flex; /* Flex to align items horizontally */
-}
-
-
-.nav-list li {
-    margin-left: 20px; /* Space between each navigation item */
-}
-
-
-/* Navigation link styling */
-.nav-list li a {
-    text-decoration: none; /* Remove underline */
-    color: black; /* Text color */
-    font-size: 18px; /* Font size */
-    font-weight: bold; /* Bold text */
-    padding: 10px;
-    transition: color 0.3s ease;
-}
-
-
-.nav-list li a:hover {
-    color: #9ed5e9;
-}
-
-
-/* Footer styling */
-footer {
+#home-page-content p {
+    font-size: 1.2rem;
+    color: #DFF0D8; /* green for body text */
+    max-width: 800px;
+    line-height: 1.8;
+    margin-bottom: 20px;
     text-align: center;
-    padding: 15px;
-    background-color: rgb(255, 255, 255);
-    position: fixed;
-    width: 100%;
-    bottom: 0;
 }
 
-
-/*About me page*/
-/* Container for video and button */
-.video-button-container {
-    display: flex; /* Display items side by side */
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
-    gap: 20px; /* Space between video and button */
+#home-page-content p strong {
+    color: #79bf85;
+    font-weight: bold;
 }
 
+#home-page-content img {
+    max-width: 200px;
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+#home-page-content img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+#home-page-content p {
+    font-size: 1.2rem;
+    color: #fffdfd;
+    max-width: 800px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+#home-page-content p:last-child {
+    margin-bottom: 0;
+}
 
 /* Contact Page */
 #contact-page {
     font-family: 'Courier New', Courier, monospace;
     display: flex;
-    background: linear-gradient(135deg,  #CF9FFF, #5D3FD3); /* angled gradient */
+    background: linear-gradient(to bottom, #bfcfbb, #05472a, #000000);
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-
 
 #contact-page #wrapper {
     background-color: white;
@@ -174,22 +87,19 @@ footer {
     width: 100%;
 }
 
-
-#contact-page h1, #contact-page h3 {
+#contact-page h1,
+#contact-page h3 {
     text-align: center;
     color: #333;
 }
-
 
 #contact-page form {
     margin-top: 20px;
 }
 
-
 #contact-page p {
     margin-bottom: 15px;
 }
-
 
 #contact-page input[type="text"],
 #contact-page input[type="email"],
@@ -201,11 +111,9 @@ footer {
     font-size: 16px;
 }
 
-
 #contact-page input[type="checkbox"] {
     margin-right: 10px;
 }
-
 
 /* Circular Buttons */
 #contact-page input[type="submit"],
@@ -225,125 +133,25 @@ footer {
     transition: all 0.3s ease; /* Smooth transition for hover effect */
 }
 
-
-/* Submit and Reset button specific colors */
 #contact-page input[type="submit"] {
-    background-color: #baffca; /* Submit button color */
+    background-color: #b8d8be; /* Submit button color */
 }
-
 
 #contact-page input[type="reset"] {
-    background-color: #faa2ab; /* Reset button color */
+    background-color: #d2e7d6; /* Reset button color */
 }
 
-
-/* Hover effects for both buttons */
 #contact-page input[type="submit"]:hover,
 #contact-page input[type="reset"]:hover {
     opacity: 0.8;
     box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.2), 5px 5px 10px rgba(0, 0, 0, 0.2); /* Inverted shadow effect */
 }
 
-
-/* Button container to ensure buttons are aligned side by side */
 #contact-page .button-container {
     display: flex;
     justify-content: center; /* Center buttons horizontally */
     align-items: center;
 }
-
-
-/* Project page */
-body {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 0;
-    color: #333;
-}
-
-
-header {
-    text-align: center;
-    padding: 30px 20px;
-    background-color: #ffffff;
-    color: black;
-    margin-bottom: 20px;
-}
-
-
-header h1 {
-    font-size: 30px;
-    text-align: center;
-    margin: 0;
-}
-
-
-#projects {
-     padding: 20px;
-}
-
-
-.allProjects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Distributes space between columns */
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto; /* Center container */
-}
-
-
-.project1, .project2, .project3 {
-    background: white;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-
-.project1:hover, .project2:hover, .project3:hover {
-    transform: translateY(-5px); /* Lift on hover */
-}
-
-
-.project1 h1, .project2 h1, .project3 h1 {
-    font-size: 24px;
-    color: #4a90e2;
-    margin-bottom: 10px;
-}
-
-
-.project1 h4, .project2 h4, .project3 h4{
-    font-size: 18px;
-    color: rgb(47, 47, 47);
-    margin-bottom: 15px;
-}
-
-
-.project1 p, .project2 p, .project3 p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: black;
-}
-
-
-.projectImg {
-    margin-top: 20px;
-}
-.subtitle {
-    text-align: center;
-}
-
-
-.projectImg img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -352,8 +160,6 @@ header h1 {
     }
 }
 
-
-/* Media query to adjust button size for smaller screens */
 @media (max-width: 600px) {
     #contact-page input[type="submit"],
     #contact-page input[type="reset"] {
@@ -361,5 +167,10 @@ header h1 {
         height: 100px;
         line-height: 100px; /* Center text inside smaller circle */
         margin-right: 10px;
+    }
+
+    #contact-page .button-container {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 20px; /* Space between buttons */
     }
 }
