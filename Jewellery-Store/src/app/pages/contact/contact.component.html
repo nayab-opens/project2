@@ -1,0 +1,36 @@
+<!-- contact.component.html -->
+<div id="contact-page">
+    <div id="wrapper">
+      <h3>Get In Touch</h3>
+      <h1>Contact</h1>
+      <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+        <p>
+          <label for="name">Name :</label>
+          <input type="text" name="name" [(ngModel)]="model.name" required #name="ngModel">
+          <div *ngIf="name.invalid && name.touched" class="error">Name is required.</div>
+        </p>
+  
+        <p>
+          <label for="email">Email :</label>
+          <input type="email" name="email" [(ngModel)]="model.email" required #email="ngModel">
+          <div *ngIf="email.invalid && email.touched" class="error">Valid email is required.</div>
+        </p>
+  
+        <p>
+          <label for="comments">Comments :</label>
+          <textarea name="comments" [(ngModel)]="model.comments" cols="40" rows="8"></textarea>
+        </p>
+  
+        <p>
+          <input type="checkbox" name="maillist" [(ngModel)]="model.maillist" id="maillist">
+          <label for="maillist">Put me on the list for subscription</label>
+        </p>
+  
+        <p>
+          <button type="submit" [disabled]="contactForm.invalid">Click to submit</button>
+          <button type="reset" (click)="onReset(contactForm)">Click to reset</button>
+        </p>
+      </form>
+    </div>
+  </div>
+  

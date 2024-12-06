@@ -1,0 +1,21 @@
+<section class="team">
+  <!-- Loop through team members using Angular's *ngFor directive -->
+  <div class="team-member" *ngFor="let member of teamMembers">
+    <p>{{ member.name }}</p>
+    <!-- Bind the image dynamically based on the member's image path -->
+    <img [src]="member.image" [alt]="'Photo of ' + member.name" width="200" *ngIf="member.image">
+    <!-- Add a default image if the member's image path is not provided -->
+    <img src="assets/aysha.jpg" alt="Default image" width="200" *ngIf="!member.image && member.name === 'Aysha'">
+    <img src="assets/nayab.jpg" alt="Default image" width="200" *ngIf="!member.image && member.name === 'Nayab'">
+    <img src="assets/sidrah.jpg" alt="Default image" width="200" *ngIf="!member.image && member.name === 'Sidrah'">
+  </div>
+</section>
+
+<!-- Presentation link outside the loop -->
+<div class="presentation-link">
+  <p>
+    <a href="https://docs.google.com/presentation/d/1zzIzg1k5f3zwSth4bIO_2N9OTiNEAwZC__cM3dsctrY/edit?usp=sharing" target="_blank">
+      View Presentation
+    </a>
+  </p>
+</div>

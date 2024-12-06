@@ -1,0 +1,67 @@
+/* Main styling for the team section */
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Styling for each team member */
+  .team-member {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    width: 220px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  /* Hover effect on team member cards */
+  .team-member:hover {
+    transform: translateY(-10px); /* Lift the card on hover */
+  }
+  
+  /* Styling for images in team member cards */
+  .team-member img {
+    border-radius: 50%;
+    margin-top: 10px;
+    width: 100%; /* Make sure image is responsive within the container */
+    height: auto;
+  }
+  
+  /* Styling for presentation link section */
+  .presentation-link {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  /* Link styling for presentation */
+  .presentation-link a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  /* Hover effect for the presentation link */
+  .presentation-link a:hover {
+    text-decoration: underline;
+    color: #0056b3; /* Slightly darker color on hover */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .team-member {
+      width: 100%; /* Full width on smaller screens */
+      max-width: 300px; /* Limit width on small screens */
+      padding: 10px; /* Adjust padding */
+    }
+  
+    .presentation-link a {
+      font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+  }
+  
